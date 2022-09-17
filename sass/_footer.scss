@@ -1,0 +1,171 @@
+.footer {
+  padding: 15rem 0;
+  padding-bottom: 5rem;
+
+  &--container {
+    width: 60%;
+    margin: 0 auto;
+    display: flex;
+    // align-items: center;
+    justify-content: space-between;
+  }
+
+  &--link-box {
+    display: flex;
+    // align-items: center;
+    column-gap: 2.5rem;
+  }
+
+  &--links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.3rem;
+    width: 180px;
+    margin-bottom: 2rem;
+
+    &-title {
+      font-size: 1.6rem;
+    }
+  }
+
+  &--link {
+    text-decoration: none;
+    font-size: 1.4rem;
+    color: hsl(240, 13%, 62%);
+
+    &:hover {
+      color: hsl(2, 100%, 69%);
+    }
+  }
+
+  &--brand-box {
+    display: flex;
+    // align-items: center;
+    flex-direction: column;
+    gap: 2.5rem;
+    text-align: right;
+    margin-bottom: 2.5rem;
+  }
+
+  &--text {
+    font-size: 1.5rem;
+    text-align: left;
+    color: hsl(240, 13%, 62%);
+  }
+
+  &--logo {
+    height: 3.5rem;
+  }
+
+  &--social-box {
+    display: flex;
+    // align-items: center;
+    gap: 2.3rem;
+  }
+
+  &--last {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-top: 3.5rem;
+    font-size: 1.5rem;
+    color: hsl(240, 13%, 62%);
+    border-top: 1px solid hsla(0, 0%, 18%, 0.2);
+    padding: 2.5rem 0rem;
+    margin-top: 1.5rem;
+  }
+}
+
+.fa-github {
+  text-decoration: none;
+  font-size: 2rem;
+  color: hsl(240, 13%, 62%);
+  &:hover {
+    color: hsl(2, 100%, 69%);
+  }
+}
+
+.fa-instagram {
+  text-decoration: none;
+  font-size: 2rem;
+  color: hsl(240, 13%, 62%);
+
+  &:hover {
+    color: hsl(2, 100%, 69%);
+  }
+}
+
+.fa-youtube {
+  text-decoration: none;
+  font-size: 2rem;
+  color: hsl(240, 13%, 62%);
+
+  &:hover {
+    color: hsl(2, 100%, 69%);
+  }
+}
+
+.fa-facebook {
+  text-decoration: none;
+  font-size: 2rem;
+  color: hsl(240, 13%, 62%);
+
+  &:hover {
+    color: hsl(2, 100%, 69%);
+  }
+}
+
+@media only screen and (max-width: 1700px) {
+  .footer {
+    height: 115vh;
+    padding: 0;
+    text-align: left;
+    &--container {
+      width: 80%;
+      margin: 0 auto;
+      flex-direction: column;
+      text-align: left;
+    }
+
+    &--link-box {
+      flex-direction: column;
+      text-align: left;
+    }
+
+    &--logo {
+      width: 15rem;
+    }
+
+    &--text {
+      text-align: left;
+    }
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .footer {
+    height: 100vh;
+    padding: 0;
+    text-align: left;
+    &--container {
+      width: 80%;
+      margin: 0 auto;
+      flex-direction: column;
+      text-align: left;
+    }
+
+    &--link-box {
+      flex-direction: column;
+      text-align: left;
+    }
+
+    &--logo {
+      width: 15rem;
+    }
+
+    &--text {
+      text-align: left;
+    }
+  }
+}

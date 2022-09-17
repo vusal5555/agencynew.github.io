@@ -1,0 +1,100 @@
+.trial {
+  padding: 15rem 0;
+
+  &--box {
+    width: 60%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 10rem 15rem;
+    background-image: linear-gradient(hsl(2, 100%, 69%), hsl(342, 90%, 61%));
+    color: #fff;
+    border-radius: 1.5rem;
+  }
+
+  &--heading {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+  }
+
+  &--text {
+    font-size: 1.8rem;
+    width: 70%;
+    margin: 0 auto;
+    margin-bottom: 3.5rem;
+  }
+
+  &--heading {
+    width: 70%;
+    margin: 0 auto;
+    margin-bottom: 1.5rem;
+    transition: all 0.2s;
+
+    &:hover {
+      scale: 1.05;
+    }
+  }
+
+  &--input {
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #fff;
+    border-bottom: 2px solid #fff;
+    padding: 1rem 1.5rem;
+    width: 35%;
+    font-size: 1.8rem;
+    display: inline-block;
+    margin-right: 2.5rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media only screen and (max-width: 1400px) {
+  .trial {
+    padding: 0 2.5rem;
+    &--box {
+      width: 100%;
+      padding: 8rem 3.5rem;
+    }
+
+    &--heading {
+      font-size: 5rem;
+      width: 100%;
+    }
+
+    &--text {
+      font-size: 2rem;
+      width: 100%;
+    }
+
+    &--input {
+      width: 40%;
+      margin: 0 auto;
+    }
+  }
+}
+@media only screen and (max-width: 900px) {
+  .trial {
+    padding: 0 2.5rem;
+    &--box {
+      width: 100%;
+      padding: 8rem 3.5rem;
+    }
+
+    &--heading {
+      font-size: 4rem;
+      width: 100%;
+    }
+
+    &--text {
+      font-size: 2rem;
+      width: 100%;
+    }
+
+    &--input {
+      width: 40%;
+      margin-bottom: 1.5rem;
+      margin-right: 1.5rem;
+    }
+  }
+}
