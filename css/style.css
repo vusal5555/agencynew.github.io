@@ -4,6 +4,7 @@
     width: 60%;
     margin: 3.5rem auto;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between; }
     .header--nav-nav {
@@ -64,7 +65,10 @@
 .openmenu {
   font-size: 3.5rem;
   cursor: pointer;
-  display: none; }
+  display: none;
+  border: none;
+  outline: none;
+  background: none; }
 
 .closemenu {
   font-size: 3.5rem;
@@ -72,7 +76,11 @@
   display: none;
   position: absolute;
   top: 2rem;
-  right: 2rem; }
+  right: 2rem;
+  border: none;
+  outline: none;
+  background: none;
+  color: #fff; }
 
 @media only screen and (max-width: 1500px) {
   .header--container {
@@ -95,18 +103,20 @@
   .closemenu {
     display: block; }
   .header--nav-nav {
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 10;
-    display: none;
+    display: flex;
     flex-direction: column;
-    justify-content: center;
+    position: fixed;
+    width: 300px;
+    height: 100vh;
+    top: 0;
+    left: -300px;
+    text-align: left;
+    z-index: 10;
+    background-image: linear-gradient(#ef1570, #ef1570);
+    padding: 3rem;
+    padding-top: 15rem;
     align-items: center;
     transition: all 0.5s;
-    background-image: linear-gradient(to right, #ef1f76, #ff6661);
     color: #fff;
     text-transform: uppercase; }
   .header--nav-link {
@@ -570,7 +580,7 @@ body {
   .fa-facebook:hover {
     color: #ff6661; }
 
-@media only screen and (max-width: 1700px) {
+@media only screen and (max-width: 1400px) {
   .footer {
     padding: 0;
     text-align: left; }

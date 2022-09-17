@@ -1,9 +1,11 @@
 .header {
   overflow: hidden;
+
   &--nav {
     width: 60%;
     margin: 3.5rem auto;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
 
@@ -95,6 +97,9 @@
   font-size: 3.5rem;
   cursor: pointer;
   display: none;
+  border: none;
+  outline: none;
+  background: none;
 }
 .closemenu {
   font-size: 3.5rem;
@@ -103,6 +108,10 @@
   position: absolute;
   top: 2rem;
   right: 2rem;
+  border: none;
+  outline: none;
+  background: none;
+  color: #fff;
 }
 
 @media only screen and (max-width: 1500px) {
@@ -142,28 +151,60 @@
 
   .header {
     &--nav {
+      // &-nav {
+      //   //version 2
+      //   // display: none;
+      //   // width: 100%;
+      //   // flex-direction: column;
+      //   // margin-top: 2.5rem;
+
+      //   // text-transform: uppercase;
+
+      //   //version 1
+      //   height: 100vh;
+      //   position: fixed;
+      //   top: 0;
+      //   left: 0;
+      //   right: 0;
+      //   z-index: 10;
+      //   display: none;
+      //   // visibility: hidden;
+
+      //   flex-direction: column;
+      //   justify-content: center;
+      //   align-items: center;
+      //   transition: top 0.5s ease-in-out;
+      //   // transition: all 1s;
+
+      //   // background-color: hsl(39, 100%, 52%);
+      //   background-image: linear-gradient(
+      //     to right,
+      //     hsl(335, 87%, 53%),
+      //     hsl(2, 100%, 69%)
+      //   );
+      //   color: #fff;
+      //   text-transform: uppercase;
+      // }
+
       &-nav {
-        height: 100vh;
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        z-index: 10;
-        display: none;
-
+        display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        // transition: top 1s ease;
-        // transition: all 1s;
-        transition: all 0.5s;
 
-        // background-color: hsl(39, 100%, 52%);
+        position: fixed;
+        width: 300px;
+        height: 100vh;
+        top: 0;
+        left: -300px;
+        text-align: left;
+        z-index: 10;
         background-image: linear-gradient(
-          to right,
-          hsl(335, 87%, 53%),
-          hsl(2, 100%, 69%)
+          hsl(335, 87%, 51%),
+          hsl(335, 87%, 51%)
         );
+        padding: 3rem;
+        padding-top: 15rem;
+        align-items: center;
+        transition: all 0.5s;
         color: #fff;
         text-transform: uppercase;
       }
@@ -172,6 +213,12 @@
         color: inherit;
       }
     }
+
+    // .header--nav-nav.show {
+    //   display: flex;
+    //   transition: all 0.5s;
+    // }
+
     .btn {
       margin-left: 0;
       background-color: hsl(39, 100%, 52%);

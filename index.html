@@ -14,8 +14,10 @@
     <header class="header">
       <nav class="header--nav">
         <img src="images/logo.png" class="header--logo" alt="" />
-        <div class="openmenu"><i class="fa-solid fa-bars"></i></div>
-        <ul class="header--nav-nav">
+        <button class="openmenu" onclick="showMenu()">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+        <ul class="header--nav-nav" id="navLinks">
           <li class="header--nav-item">
             <a href="#" class="header--nav-link">Home</a>
           </li>
@@ -33,7 +35,9 @@
           </li>
 
           <button class="btn">Get in touch</button>
-          <div class="closemenu"><i class="fa-solid fa-xmark"></i></div>
+          <button class="closemenu" onclick="hideMenu()">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
         </ul>
       </nav>
 
