@@ -1,5 +1,4 @@
 .header {
-  position: relative;
   overflow: hidden;
   &--nav {
     width: 60%;
@@ -92,12 +91,12 @@
 //   cursor: pointer;
 // }
 
-.fa-solid.fa-bars {
+.openmenu {
   font-size: 3.5rem;
   cursor: pointer;
   display: none;
 }
-.fa-solid.fa-xmark {
+.closemenu {
   font-size: 3.5rem;
   cursor: pointer;
   display: none;
@@ -134,10 +133,10 @@
 }
 
 @media only screen and (max-width: 1200px) {
-  .fa-solid.fa-xmark {
+  .openmenu {
     display: block;
   }
-  .fa-solid.fa-bars {
+  .closemenu {
     display: block;
   }
 
@@ -150,12 +149,15 @@
         left: 0;
         right: 0;
         z-index: 10;
+        display: none;
+
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        transition: top 1s ease;
+        // transition: top 1s ease;
         // transition: all 1s;
-        display: none;
+        transition: all 0.5s;
+
         // background-color: hsl(39, 100%, 52%);
         background-image: linear-gradient(
           to right,

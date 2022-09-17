@@ -1,6 +1,6 @@
-const mainMenu = document.querySelector(".header--nav-nav");
-const closeMenu = document.querySelector(".fa-solid.fa-xmark");
-const openMenu = document.querySelector(".fa-solid.fa-bars");
+let mainMenu = document.querySelector(".header--nav-nav");
+const closeMenu = document.querySelector(".closemenu");
+const openMenu = document.querySelector(".openmenu");
 
 openMenu.addEventListener("click", showm);
 closeMenu.addEventListener("click", closeM);
@@ -10,5 +10,5 @@ function showm() {
   mainMenu.style.top = "0";
 }
 function closeM() {
-  mainMenu.style.top = "-100%";
+  mainMenu.style.top = "-110%";
 }
