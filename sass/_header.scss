@@ -86,6 +86,7 @@
   top: 0;
   right: 0;
   z-index: -1;
+  background-image: linear-gradient(rgba(AntiqueWhite, 0.5));
 }
 
 // .hamburger {
@@ -111,7 +112,7 @@
   border: none;
   outline: none;
   background: none;
-  color: #fff;
+  color: #000;
 }
 
 @media only screen and (max-width: 1500px) {
@@ -187,32 +188,75 @@
       // }
 
       &-nav {
-        display: flex;
+        // display: flex;
         flex-direction: column;
 
         position: fixed;
-        width: 300px;
+        width: 100%;
         height: 100vh;
-        top: 0;
-        left: -300px;
-        text-align: left;
+        top: -100%;
+        left: 0;
+        text-align: center;
         z-index: 10;
-        background-image: linear-gradient(
-          hsl(335, 87%, 51%),
-          hsl(335, 87%, 51%)
-        );
+        // background-image: linear-gradient(
+        //   hsl(335, 87%, 51%),
+        //   hsl(335, 87%, 51%)
+        // );
+        // background-image: linear-gradient(
+        //     rgb(255, 255, 255),
+        //     rgb(255, 255, 255)
+        //   ),
+        //   url(../images/bg.png);
+        // background-position: center;
+        // background-size: cover;
+        // background-image: linear-gradient(
+        //   rgb(250, 235, 215),
+        //   rgb(255, 228, 196)
+        // );
+        //rgb(250, 235, 215)
+        background-color: #fff;
+
         padding: 3rem;
         padding-top: 15rem;
         align-items: center;
         transition: all 0.5s;
-        color: #fff;
+        color: #000;
         text-transform: uppercase;
+
+        // background-color: #fff;
+        // position: fixed;
+        // top: 0;
+        // left: -280px;
+        // width: 100%;
+        // max-width: 280px;
+        // min-height: 100%;
+
+        // padding: 20px;
+        // visibility: hidden;
+        // z-index: 10;
+        // transition: 0.25s;
+        // flex-direction: column;
       }
 
       &-link {
         color: inherit;
       }
     }
+
+    .hidden {
+      top: 0;
+    }
+
+    // .header--nav-nav.active {
+    //   transform: translateX(280px);
+    //   visibility: visible;
+    //   transition: 0.5s;
+    // }
+
+    // .header--nav-nav {
+    //   all: unset;
+    //   margin-inline-start: auto;
+    // }
 
     // .header--nav-nav.show {
     //   display: flex;
