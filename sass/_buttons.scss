@@ -10,6 +10,7 @@
   border-radius: 3px;
   margin-left: 5rem;
   cursor: pointer;
+  transform: 0.3s;
 
   &:active {
     box-shadow: 0 5px rgba(hsl(240, 9%, 53%), 0.2);
@@ -20,8 +21,7 @@
 .header-btn {
   margin-left: 0;
   transform: translateX(0);
-
-  &:active {
+  tr &:active {
     box-shadow: 0 5px rgba(hsl(240, 9%, 53%), 0.2);
     transform: translateY(4px);
   }
@@ -56,4 +56,12 @@
   border: none;
   display: block;
   font-size: 3rem;
+}
+.section--hidden {
+  opacity: 0;
+  transform: translateY(8rem);
+}
+
+.section {
+  transition: transform 1s, opacity 1s;
 }

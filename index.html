@@ -8,33 +8,36 @@
     <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css""
     />
+    <link rel="shortcut icon" type="svg" href="favicon.svg" />
     <title>Document</title>
   </head>
   <body>
-    <header class="header">
+    <header class="header" id="home">
       <nav class="header--nav">
-        <img src="images/logo.png" class="header--logo" alt="" />
+        <img src="images/logo.png" href="#home" class="header--logo" alt="" />
         <button class="openmenu">
           <i class="fa-solid fa-bars"></i>
         </button>
         <ul class="header--nav-nav" id="navLinks">
           <li class="header--nav-item">
-            <a href="#" class="header--nav-link">Home</a>
+            <a href="#home" class="header--nav-link">Home</a>
           </li>
           <li class="header--nav-item">
-            <a href="#" class="header--nav-link">What we do</a>
+            <a href="#about" class="header--nav-link">What we do</a>
           </li>
           <li class="header--nav-item">
-            <a href="#" class="header--nav-link">Why us</a>
+            <a href="#reason" class="header--nav-link">Why us</a>
           </li>
           <li class="header--nav-item">
-            <a href="#" class="header--nav-link">Our work</a>
+            <a href="#trial" class="header--nav-link">Try it out</a>
           </li>
           <li class="header--nav-item">
-            <a href="#" class="header--nav-link">Contact</a>
+            <a href="#cta" class="header--nav-link">Contact</a>
           </li>
 
-          <button class="btn">Get in touch</button>
+          <button href="#footer" class="btn header--nav-link">
+            Get in touch
+          </button>
           <button class="closemenu">
             <i class="fa-solid fa-xmark"></i>
           </button>
@@ -58,7 +61,7 @@
       <img src="images/bg.png" class="bg-png" alt="" />
     </header>
 
-    <section class="about-us">
+    <section class="about-us section" id="about">
       <div class="about-us--top">
         <h2 class="about-us--heading">What we do</h2>
         <p class="about-us--text">
@@ -107,12 +110,12 @@
             through its charitable foundation.
           </p>
 
-          <button class="btn btn-about">Sign up for free</button>
+          <button class="btn btn-about btn-trial">Sign up for free</button>
         </div>
       </div>
     </section>
 
-    <section class="reason">
+    <section class="reason section" id="reason">
       <div class="reason--container">
         <div class="reason--box-1">
           <div class="reason--img-container">
@@ -143,7 +146,7 @@
       </div>
     </section>
 
-    <section class="trial">
+    <section class="trial section" id="trial">
       <div class="trial--box">
         <h3 class="trial--heading">Try for 7 days free</h3>
         <p class="trial--text">
@@ -157,7 +160,7 @@
       </div>
     </section>
 
-    <section class="cta">
+    <section class="cta section" id="cta">
       <div class="cta--container">
         <div class="cta--box-1">
           <h2 class="cta--heading">Let’s Scale Your Brand, Together</h2>
@@ -192,7 +195,7 @@
       </div>
     </section>
 
-    <footer class="footer">
+    <footer class="footer section" id="footer">
       <div class="footer--container">
         <div class="footer--brand-box">
           <img src="images/logo.png" alt="" class="footer--logo" />

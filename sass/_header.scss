@@ -1,13 +1,16 @@
 .header {
   overflow: hidden;
+  line-height: 1.2;
 
   &--nav {
     width: 60%;
-    margin: 3.5rem auto;
+    margin: 0 auto;
     display: flex;
-    flex-wrap: wrap;
+    // flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
+    z-index: 1000;
+    padding: 3.5rem 0;
 
     &-nav {
       display: flex;
@@ -21,6 +24,7 @@
       font-size: 1.5rem;
       color: hsl(231, 61%, 22%);
       font-weight: 700;
+      transition: 0.3s;
     }
 
     &-item::after {
@@ -80,6 +84,13 @@
     margin-bottom: 2.5rem;
   }
 }
+.sticky {
+  position: fixed;
+  background-color: rgba(255, 255, 255, 0.95);
+  width: 100%;
+  padding: 1.5rem 3.5rem;
+  box-shadow: 5px -5px 32px -7px rgba(0, 0, 0, 0.75);
+}
 
 .bg-png {
   position: absolute;
@@ -99,8 +110,13 @@
   cursor: pointer;
   display: none;
   border: none;
-  outline: none;
+
   background: none;
+
+  &:focus {
+    outline: none;
+    background: none;
+  }
 }
 .closemenu {
   font-size: 3.5rem;
@@ -113,6 +129,15 @@
   outline: none;
   background: none;
   color: #000;
+}
+
+@keyframes waveAnim {
+  0% {
+    transform: translate(0, 0) rotate(0);
+  }
+  100% {
+    transform: translate(2px, 2px) rotate(1deg);
+  }
 }
 
 @media only screen and (max-width: 1500px) {
@@ -128,17 +153,22 @@
     }
 
     &--heading {
-      font-size: 4.5rem;
-      font-weight: 600;
+      font-size: 5.5rem;
+      font-weight: 900;
     }
 
     &--text {
-      font-size: 2.7rem;
+      font-size: 2rem;
+      font-weight: 500;
     }
 
     &--nav {
       width: 80%;
     }
+  }
+
+  .sticky {
+    width: 100%;
   }
 }
 
@@ -196,6 +226,8 @@
         height: 100vh;
 
         top: -100vh;
+
+        // top: 7.5rem;
         left: 0;
         text-align: center;
         z-index: 10;
