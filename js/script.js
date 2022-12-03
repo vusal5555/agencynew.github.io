@@ -1,35 +1,28 @@
-const closeMenu = document.querySelector(".closemenu");
-const openMenu = document.querySelector(".openmenu");
+// const navLinks = document.getElementById("navLinks");
+// function showMenu() {
+//   navLinks.style.left = "0";
+// }
+// function hideMenu() {
+//   navLinks.style.left = "-300px";
+// }
 
 const navLinks = document.getElementById("navLinks");
-
-const header = document.querySelector(".header");
-const btnAbout = document.querySelector(".btn-trial");
-
-btnAbout.addEventListener("click", function (e) {
-  e.preventDefault();
-});
-
-//mobile navbar
-////////////
+const openMenu = document.querySelector(".fa-solid.fa-bars");
+const closeMenu = document.querySelector(".fa-solid.fa-xmark");
 
 openMenu.addEventListener("click", function () {
   navLinks.classList.add("hidden");
 });
-
 closeMenu.addEventListener("click", function () {
   navLinks.classList.remove("hidden");
 });
 
-//smooth scrolling
-/////////
+const navbar = document.querySelector(".header--navbar-nav");
 
-const nav = document.querySelector(".header--nav-nav");
-
-nav.addEventListener("click", function (e) {
+navbar.addEventListener("click", function (e) {
   e.preventDefault();
 
-  if (e.target.classList.contains("header--nav-link")) {
+  if (e.target.classList.contains("header--navbar-link")) {
     const id = e.target.getAttribute("href");
 
     document.querySelector(id).scrollIntoView({ behavior: "smooth" });
@@ -37,48 +30,9 @@ nav.addEventListener("click", function (e) {
   }
 });
 
-//Opacity on navlinks
-//////////////
+const header = document.querySelector(".header");
 
-const navbar = document.querySelector(".header--nav");
-
-navbar.addEventListener("mouseover", function (e) {
-  if (e.target.classList.contains("header--nav-link")) {
-    const link = e.target;
-    const siblings = link
-      .closest(".header--nav")
-      .querySelectorAll(".header--nav-link");
-
-    const logo = link.closest(".header--nav").querySelector(".header--logo");
-
-    siblings.forEach((el) => {
-      if (el !== link) {
-        el.style.opacity = 0.5;
-      }
-      logo.style.opacity = 0.5;
-    });
-  }
-});
-navbar.addEventListener("mouseout", function (e) {
-  if (e.target.classList.contains("header--nav-link")) {
-    const link = e.target;
-    const siblings = link
-      .closest(".header--nav")
-      .querySelectorAll(".header--nav-link");
-
-    const logo = link.closest(".header--nav").querySelector(".header--logo");
-
-    siblings.forEach((el) => {
-      if (el !== link) {
-        el.style.opacity = 1;
-      }
-      logo.style.opacity = 1;
-    });
-  }
-});
-
-//Sticky navbar
-///////
+const nav = document.querySelector(".header--navbar");
 
 const navHeight = nav.getBoundingClientRect().height;
 
@@ -86,9 +40,9 @@ const navSticky = function (entries) {
   const [entry] = entries;
 
   if (!entry.isIntersecting) {
-    navbar.classList.add("sticky");
+    nav.classList.add("sticky");
   } else {
-    navbar.classList.remove("sticky");
+    nav.classList.remove("sticky");
   }
 };
 const navObserver = new IntersectionObserver(navSticky, {
@@ -99,8 +53,12 @@ const navObserver = new IntersectionObserver(navSticky, {
 
 navObserver.observe(header);
 
-//reveal sections
-///////
+const brandLogo = document.querySelector(".header--navbar--brand");
+
+// brandLogo.addEventListener("click", function (e) {
+//   e.preventDefault();
+// });
+const allSections = document.querySelectorAll(".section");
 
 const revealSection = function (entries, observer) {
   const [entry] = entries;
@@ -110,29 +68,10 @@ const revealSection = function (entries, observer) {
 };
 const sectionObserver = new IntersectionObserver(revealSection, {
   root: null,
-  threshold: 0.15,
+  threshold: 0.2,
 });
-
-const allSections = document.querySelectorAll(".section");
 
 allSections.forEach((section) => {
   sectionObserver.observe(section);
   section.classList.add("section--hidden");
 });
-
-const numbers = [10, 14, 23, 42, 12, 49, 60, 70];
-
-const numbers2 = [80, 50, 44, 23, 30];
-const numsDivSeven = [];
-
-const numChecker = function (numbers) {
-  for (const num of numbers) {
-    if (num % 7 === 0) {
-      numsDivSeven.push(num);
-    }
-  }
-};
-
-numChecker(numbers);
-
-console.log(numsDivSeven);
