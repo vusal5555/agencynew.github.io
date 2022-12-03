@@ -1,28 +1,35 @@
-// const navLinks = document.getElementById("navLinks");
-// function showMenu() {
-//   navLinks.style.left = "0";
-// }
-// function hideMenu() {
-//   navLinks.style.left = "-300px";
-// }
+const closeMenu = document.querySelector(".closemenu");
+const openMenu = document.querySelector(".openmenu");
 
 const navLinks = document.getElementById("navLinks");
-const openMenu = document.querySelector(".fa-solid.fa-bars");
-const closeMenu = document.querySelector(".fa-solid.fa-xmark");
+
+const header = document.querySelector(".header");
+const btnAbout = document.querySelector(".btn-trial");
+
+btnAbout.addEventListener("click", function (e) {
+  e.preventDefault();
+});
+
+//mobile navbar
+////////////
 
 openMenu.addEventListener("click", function () {
   navLinks.classList.add("hidden");
 });
+
 closeMenu.addEventListener("click", function () {
   navLinks.classList.remove("hidden");
 });
 
-const navbar = document.querySelector(".header--navbar-nav");
+//smooth scrolling
+/////////
 
-navbar.addEventListener("click", function (e) {
+const nav = document.querySelector(".header--nav-nav");
+
+nav.addEventListener("click", function (e) {
   e.preventDefault();
 
-  if (e.target.classList.contains("header--navbar-link")) {
+  if (e.target.classList.contains("header--nav-link")) {
     const id = e.target.getAttribute("href");
 
     document.querySelector(id).scrollIntoView({ behavior: "smooth" });
@@ -30,9 +37,48 @@ navbar.addEventListener("click", function (e) {
   }
 });
 
-const header = document.querySelector(".header");
+//Opacity on navlinks
+//////////////
 
-const nav = document.querySelector(".header--navbar");
+const navbar = document.querySelector(".header--nav");
+
+navbar.addEventListener("mouseover", function (e) {
+  if (e.target.classList.contains("header--nav-link")) {
+    const link = e.target;
+    const siblings = link
+      .closest(".header--nav")
+      .querySelectorAll(".header--nav-link");
+
+    const logo = link.closest(".header--nav").querySelector(".header--logo");
+
+    siblings.forEach((el) => {
+      if (el !== link) {
+        el.style.opacity = 0.5;
+      }
+      logo.style.opacity = 0.5;
+    });
+  }
+});
+navbar.addEventListener("mouseout", function (e) {
+  if (e.target.classList.contains("header--nav-link")) {
+    const link = e.target;
+    const siblings = link
+      .closest(".header--nav")
+      .querySelectorAll(".header--nav-link");
+
+    const logo = link.closest(".header--nav").querySelector(".header--logo");
+
+    siblings.forEach((el) => {
+      if (el !== link) {
+        el.style.opacity = 1;
+      }
+      logo.style.opacity = 1;
+    });
+  }
+});
+
+//Sticky navbar
+///////
 
 const navHeight = nav.getBoundingClientRect().height;
 
@@ -40,9 +86,9 @@ const navSticky = function (entries) {
   const [entry] = entries;
 
   if (!entry.isIntersecting) {
-    nav.classList.add("sticky");
+    navbar.classList.add("sticky");
   } else {
-    nav.classList.remove("sticky");
+    navbar.classList.remove("sticky");
   }
 };
 const navObserver = new IntersectionObserver(navSticky, {
@@ -53,12 +99,8 @@ const navObserver = new IntersectionObserver(navSticky, {
 
 navObserver.observe(header);
 
-const brandLogo = document.querySelector(".header--navbar--brand");
-
-// brandLogo.addEventListener("click", function (e) {
-//   e.preventDefault();
-// });
-const allSections = document.querySelectorAll(".section");
+//reveal sections
+///////
 
 const revealSection = function (entries, observer) {
   const [entry] = entries;
@@ -68,10 +110,29 @@ const revealSection = function (entries, observer) {
 };
 const sectionObserver = new IntersectionObserver(revealSection, {
   root: null,
-  threshold: 0.2,
+  threshold: 0.15,
 });
+
+const allSections = document.querySelectorAll(".section");
 
 allSections.forEach((section) => {
   sectionObserver.observe(section);
   section.classList.add("section--hidden");
 });
+
+const numbers = [10, 14, 23, 42, 12, 49, 60, 70];
+
+const numbers2 = [80, 50, 44, 23, 30];
+const numsDivSeven = [];
+
+const numChecker = function (numbers) {
+  for (const num of numbers) {
+    if (num % 7 === 0) {
+      numsDivSeven.push(num);
+    }
+  }
+};
+
+numChecker(numbers);
+
+console.log(numsDivSeven);
