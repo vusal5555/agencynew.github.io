@@ -98,11 +98,14 @@ const navObserver = new IntersectionObserver(navSticky, {
 
 navObserver.observe(header);
 
+const sectionAbout = document.querySelector(".about-us");
+
 //reveal sections
 ///////
-
+const allSections = document.querySelectorAll(".section");
 const revealSection = function (entries, observer) {
   const [entry] = entries;
+
   if (!entry.isIntersecting) return;
   entry.target.classList.remove("section--hidden");
   sectionObserver.unobserve(entry.target);
@@ -111,8 +114,6 @@ const sectionObserver = new IntersectionObserver(revealSection, {
   root: null,
   threshold: 0.15,
 });
-
-const allSections = document.querySelectorAll(".section");
 
 allSections.forEach((section) => {
   sectionObserver.observe(section);
