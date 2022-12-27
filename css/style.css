@@ -139,6 +139,8 @@
     display: block; }
   .closemenu {
     display: block; }
+  .header--container {
+    margin-top: 20rem; }
   .header--nav {
     padding: 1.5rem 2rem; }
     .header--nav-nav {
