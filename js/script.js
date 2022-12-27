@@ -42,61 +42,69 @@ nav.addEventListener("click", function (e) {
 
 const navbar = document.querySelector(".header--nav");
 
-navbar.addEventListener("mouseover", function (e) {
-  if (e.target.classList.contains("header--nav-link")) {
-    const link = e.target;
-    const siblings = link
-      .closest(".header--nav")
-      .querySelectorAll(".header--nav-link");
+// navbar.addEventListener("mouseover", function (e) {
+//   if (e.target.classList.contains("header--nav-link")) {
+//     const link = e.target;
+//     const siblings = link
+//       .closest(".header--nav")
+//       .querySelectorAll(".header--nav-link");
 
-    const logo = link.closest(".header--nav").querySelector(".header--logo");
+//     const logo = link.closest(".header--nav").querySelector(".header--logo");
 
-    siblings.forEach((el) => {
-      if (el !== link) {
-        el.style.opacity = 0.5;
-      }
-      logo.style.opacity = 0.5;
-    });
-  }
-});
-navbar.addEventListener("mouseout", function (e) {
-  if (e.target.classList.contains("header--nav-link")) {
-    const link = e.target;
-    const siblings = link
-      .closest(".header--nav")
-      .querySelectorAll(".header--nav-link");
+//     siblings.forEach((el) => {
+//       if (el !== link) {
+//         el.style.opacity = 0.5;
+//       }
+//       logo.style.opacity = 0.5;
+//     });
+//   }
+// });
+// navbar.addEventListener("mouseout", function (e) {
+//   if (e.target.classList.contains("header--nav-link")) {
+//     const link = e.target;
+//     const siblings = link
+//       .closest(".header--nav")
+//       .querySelectorAll(".header--nav-link");
 
-    const logo = link.closest(".header--nav").querySelector(".header--logo");
+//     const logo = link.closest(".header--nav").querySelector(".header--logo");
 
-    siblings.forEach((el) => {
-      if (el !== link) {
-        el.style.opacity = 1;
-      }
-      logo.style.opacity = 1;
-    });
-  }
-});
+//     siblings.forEach((el) => {
+//       if (el !== link) {
+//         el.style.opacity = 1;
+//       }
+//       logo.style.opacity = 1;
+//     });
+//   }
+// });
 
 //Sticky navbar
 ///////
 
-const navHeight = nav.getBoundingClientRect().height;
+// const navHeight = nav.getBoundingClientRect().height;
 
-const navSticky = function (entries) {
-  const [entry] = entries;
+// const navSticky = function (entries) {
+//   const [entry] = entries;
 
-  if (!entry.isIntersecting) {
+//   if (!entry.isIntersecting) {
+//     navbar.classList.add("sticky");
+//   } else {
+//     navbar.classList.remove("sticky");
+//   }
+// };
+// const navObserver = new IntersectionObserver(navSticky, {
+//   root: null,
+//   threshold: 0,
+// });
+
+// navObserver.observe(header);
+
+window.addEventListener("scroll", function () {
+  if (this.window.scrollY >= 100) {
     navbar.classList.add("sticky");
   } else {
     navbar.classList.remove("sticky");
   }
-};
-const navObserver = new IntersectionObserver(navSticky, {
-  root: null,
-  threshold: 0,
 });
-
-navObserver.observe(header);
 
 const sectionAbout = document.querySelector(".about-us");
 
